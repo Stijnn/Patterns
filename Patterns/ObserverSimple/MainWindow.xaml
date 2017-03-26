@@ -24,25 +24,18 @@
     <!--Content-->
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         
         <!-- Auctioneer Grid -->
         <Grid>
-            <Subject:Auctioneer Background="LightGray" />
+            <Subject:AuctionRoom x:Name="AuctionRoom"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"/>
         </Grid>
-        
-        <!-- Bidder Grid -->
-        <ScrollViewer Grid.Row="1">
-            <WrapPanel x:Name="panelBidders" 
-                       Grid.Row="1"
-                       Background="Gray">
-            </WrapPanel>
-        </ScrollViewer>
 
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="1">
             <Button x:Name="bttnStart"
                     Style="{DynamicResource GlobalButtonStyle}"
                     Content="Start"
@@ -50,7 +43,15 @@
                     VerticalAlignment="Center" 
                     HorizontalAlignment="Left"
                     Click="OnClickStart"/>
-            
+
+            <Slider x:Name="sliderInterval" 
+                    Minimum="1" Value="1000" Maximum="5000" 
+                    ValueChanged="OnValueChanged"
+                    Height="40" Width="280"
+                    Margin="135,10,0,10"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"/>
+
             <Button x:Name="bttnReset" 
                     Style="{DynamicResource GlobalButtonStyle}" 
                     Content="Reset"

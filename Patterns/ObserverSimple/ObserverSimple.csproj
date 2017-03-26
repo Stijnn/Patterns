@@ -54,8 +54,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Subject\Auctioneer.xaml.cs">
-      <DependentUpon>Auctioneer.xaml</DependentUpon>
+    <Compile Include="Subject\AuctionRoom.xaml.cs">
+      <DependentUpon>AuctionRoom.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -73,7 +73,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Subject\Auctioneer.xaml">
+    <Page Include="Subject\AuctionRoom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -16,12 +16,12 @@
         <Grid Grid.Row="0">
             <Label x:Name="lblNumber" 
                    VerticalAlignment="Center" 
-                   HorizontalAlignment="Center" />
+                   HorizontalAlignment="Center"/>
         </Grid>
         
         <!-- Status Grid -->
         <Grid Grid.Row="1">
-            <Ellipse x:Name="ellipseStatus" />
+            <Ellipse x:Name="ellipseStatus" Stroke="Black" Fill="Orange" />
         </Grid>
     </Grid>
 </UserControl>

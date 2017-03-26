@@ -20,9 +20,46 @@ namespace ObserverSimple.Observer
     /// </summary>
     public partial class Bidder : UserControl
     {
-        public Bidder()
+        private int cashAvailable;
+        public int CashAvailable { get => cashAvailable; private set => cashAvailable = value; }
+
+        public HandState HandState { get; private set; }
+
+        private string name;
+        public string Name { get => name; private set => name = value; }
+
+        public Bidder(int cashAvailable, string name)
         {
             InitializeComponent();
+            this.cashAvailable = cashAvailable;
+            Name = name;
+            lblNumber.Content = name;
         }
+
+        public void Update(int currentBid)
+        {
+            if (cashAvailable < currentBid)
+            {
+                ellipseStatus.Dispatcher.Invoke(() =>
+                {
+                    ellipseStatus.Fill = Brushes.Red;
+                    HandState = HandState.Lowered;
+                });
+            }
+            else
+            {
+                ellipseStatus.Dispatcher.Invoke(() =>
+                {
+                    ellipseStatus.Fill = Brushes.Green;
+                    HandState = HandState.Raised;
+                });
+            }
+        }
+    }
+
+    public enum HandState
+    {
+        Lowered,
+        Raised,
     }
 }
